@@ -19,7 +19,7 @@ const Index = () => {
 
   const moroccanCities = [
     "Marrakech", "Casablanca", "Fès", "Rabat", "Agadir", 
-    "Tangier", "Meknès", "Oujda", "Kenitra", "Tétouan"
+    "Tanger", "Meknès", "Oujda", "Kenitra", "Tétouan"
   ];
 
   const featuredHotels = [
@@ -30,16 +30,16 @@ const Index = () => {
       price: 850,
       rating: 4.8,
       image: "photo-1466442929976-97f336a657be",
-      description: "Traditional riad in the heart of Medina"
+      description: "Riad traditionnel au cœur de la Médina"
     },
     {
       id: 2,
-      name: "Hotel Hassan II Casablanca",
+      name: "Hôtel Hassan II Casablanca",
       city: "Casablanca",
       price: 1200,
       rating: 4.6,
       image: "photo-1487958449943-2429e8be8625",
-      description: "Modern luxury hotel near Hassan II Mosque"
+      description: "Hôtel de luxe moderne près de la Mosquée Hassan II"
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ const Index = () => {
       price: 950,
       rating: 4.7,
       image: "photo-1518005020951-eccb494ad742",
-      description: "Historic palace hotel with panoramic views"
+      description: "Hôtel palace historique avec vues panoramiques"
     }
   ];
 
@@ -73,14 +73,14 @@ const Index = () => {
                 <span className="text-white font-bold text-sm">BM</span>
               </div>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
-                BookMorocco
+                BookMaroc
               </h1>
             </div>
             <nav className="flex items-center space-x-6">
-              <Button variant="ghost" onClick={() => navigate("/hotels")}>Hotels</Button>
-              <Button variant="ghost" onClick={() => navigate("/login")}>Login</Button>
+              <Button variant="ghost" onClick={() => navigate("/hotels")}>Hôtels</Button>
+              <Button variant="ghost" onClick={() => navigate("/login")}>Connexion</Button>
               <Button onClick={() => navigate("/register")} className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700">
-                Register
+                S'inscrire
               </Button>
             </nav>
           </div>
@@ -91,14 +91,14 @@ const Index = () => {
       <section className="relative py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl font-bold text-gray-900 mb-6">
-            Discover the Magic of
+            Découvrez la Magie du
             <span className="block bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
-              Morocco
+              Maroc
             </span>
           </h2>
           <p className="text-xl text-gray-600 mb-12">
-            From the bustling souks of Marrakech to the blue streets of Chefchaouen, 
-            find your perfect Moroccan getaway
+            Des souks animés de Marrakech aux rues bleues de Chefchaouen, 
+            trouvez votre escapade marocaine parfaite
           </p>
 
           {/* Search Form */}
@@ -106,11 +106,11 @@ const Index = () => {
             <CardContent className="p-8">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">City</label>
+                  <label className="text-sm font-medium text-gray-700">Ville</label>
                   <div className="relative">
                     <MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <Input
-                      placeholder="Choose city"
+                      placeholder="Choisir une ville"
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
                       className="pl-10 h-12"
@@ -125,7 +125,7 @@ const Index = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Check-in</label>
+                  <label className="text-sm font-medium text-gray-700">Arrivée</label>
                   <Popover>
                     <PopoverTrigger asChild>
                       <Button
@@ -136,7 +136,7 @@ const Index = () => {
                         )}
                       >
                         <CalendarIcon className="mr-2 h-4 w-4" />
-                        {checkIn ? format(checkIn, "MMM dd") : "Select date"}
+                        {checkIn ? format(checkIn, "dd MMM") : "Sélectionner"}
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
@@ -152,7 +152,7 @@ const Index = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Check-out</label>
+                  <label className="text-sm font-medium text-gray-700">Départ</label>
                   <Popover>
                     <PopoverTrigger asChild>
                       <Button
@@ -163,7 +163,7 @@ const Index = () => {
                         )}
                       >
                         <CalendarIcon className="mr-2 h-4 w-4" />
-                        {checkOut ? format(checkOut, "MMM dd") : "Select date"}
+                        {checkOut ? format(checkOut, "dd MMM") : "Sélectionner"}
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
@@ -179,11 +179,11 @@ const Index = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Guests</label>
+                  <label className="text-sm font-medium text-gray-700">Voyageurs</label>
                   <div className="relative">
                     <Users className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <Input
-                      placeholder="2 guests"
+                      placeholder="2 voyageurs"
                       value={guests}
                       onChange={(e) => setGuests(e.target.value)}
                       className="pl-10 h-12"
@@ -197,7 +197,7 @@ const Index = () => {
                 size="lg"
                 className="w-full h-14 text-lg bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700"
               >
-                Search Hotels
+                Rechercher des Hôtels
               </Button>
             </CardContent>
           </Card>
@@ -208,7 +208,7 @@ const Index = () => {
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Featured Hotels
+            Hôtels à la Une
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredHotels.map((hotel) => (
@@ -239,7 +239,7 @@ const Index = () => {
                     <span className="text-2xl font-bold text-red-600">
                       {hotel.price} MAD
                     </span>
-                    <span className="text-sm text-gray-500">per night</span>
+                    <span className="text-sm text-gray-500">par nuit</span>
                   </div>
                 </CardContent>
               </Card>
@@ -252,34 +252,34 @@ const Index = () => {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Why Choose Morocco?
+            Pourquoi Choisir le Maroc?
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-red-600 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Camera className="h-8 w-8 text-white" />
               </div>
-              <h4 className="text-xl font-semibold mb-3">Rich Culture</h4>
+              <h4 className="text-xl font-semibold mb-3">Culture Riche</h4>
               <p className="text-gray-600">
-                Experience centuries of history, from ancient medinas to stunning architecture
+                Vivez des siècles d'histoire, des médinas anciennes à l'architecture époustouflante
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-red-600 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="h-8 w-8 text-white" />
               </div>
-              <h4 className="text-xl font-semibold mb-3">Diverse Landscapes</h4>
+              <h4 className="text-xl font-semibold mb-3">Paysages Diversifiés</h4>
               <p className="text-gray-600">
-                From Sahara Desert to Atlas Mountains, discover breathtaking scenery
+                Du désert du Sahara aux montagnes de l'Atlas, découvrez des paysages à couper le souffle
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-red-600 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Star className="h-8 w-8 text-white" />
               </div>
-              <h4 className="text-xl font-semibold mb-3">Hospitality</h4>
+              <h4 className="text-xl font-semibold mb-3">Hospitalité</h4>
               <p className="text-gray-600">
-                Warm Moroccan hospitality and world-class accommodation await you
+                L'hospitalité marocaine chaleureuse et l'hébergement de classe mondiale vous attendent
               </p>
             </div>
           </div>
@@ -295,42 +295,42 @@ const Index = () => {
                 <div className="w-8 h-8 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">BM</span>
                 </div>
-                <h3 className="text-xl font-bold">BookMorocco</h3>
+                <h3 className="text-xl font-bold">BookMaroc</h3>
               </div>
               <p className="text-gray-400">
-                Your gateway to the best hotels in Morocco
+                Votre porte d'entrée vers les meilleurs hôtels du Maroc
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Popular Cities</h4>
+              <h4 className="font-semibold mb-4">Villes Populaires</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>Marrakech Hotels</li>
-                <li>Casablanca Hotels</li>
-                <li>Fès Hotels</li>
-                <li>Rabat Hotels</li>
+                <li>Hôtels Marrakech</li>
+                <li>Hôtels Casablanca</li>
+                <li>Hôtels Fès</li>
+                <li>Hôtels Rabat</li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>Help Center</li>
-                <li>Contact Us</li>
-                <li>Booking Policy</li>
-                <li>Cancellation</li>
+                <li>Centre d'Aide</li>
+                <li>Nous Contacter</li>
+                <li>Politique de Réservation</li>
+                <li>Annulation</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
+              <h4 className="font-semibold mb-4">Entreprise</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>About Us</li>
-                <li>Careers</li>
-                <li>Press</li>
-                <li>Partners</li>
+                <li>À Propos</li>
+                <li>Carrières</li>
+                <li>Presse</li>
+                <li>Partenaires</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 BookMorocco. All rights reserved.</p>
+            <p>&copy; 2024 BookMaroc. Tous droits réservés.</p>
           </div>
         </div>
       </footer>
